@@ -184,7 +184,11 @@ while not stop:
 
         # do every frame
         if (counter % 1) == 0:
-
+           
+            #----------------#
+            # PID Controller #
+            #----------------#
+            
             # Calculating directional values for drone
             if marker_x < 0:
                 directionX = -(((screenSize[0]/2) - marker_x)/20800) #right
@@ -208,6 +212,8 @@ while not stop:
             # Calculating altitude values for drone
             altitudeChange = 0.0
             altitudeChange =  getAltitudeChange(altitude, hoverAltitude, hoverDeviation)
+
+            #----------------#
 
             # Hover above marker
             if do_marker_hover:
